@@ -10,6 +10,9 @@ import tutorial2 from "../assets/tutorial2.png";
 import tutorial3 from "../assets/tutorial3.png";
 import tutorial4 from "../assets/tutorial4.png";
 
+import Irflag from "../assets/IR.jpg"
+import USflag from "../assets/US.png"
+
 const slides = [
   {
     image: tutorial1,
@@ -142,7 +145,7 @@ export default function Onboarding() {
                       src={slide.image}
                       alt=""
                       className="
-                        w-[100%]
+                        w-[280px]
                         object-contain
                       "
                     />
@@ -294,9 +297,9 @@ function LanguageModal({
         <div className="flex items-center gap-4">
 
           <img
-            src="https://hatscripts.github.io/circle-flags/flags/us.svg"
+            src={USflag}
             alt="English"
-            className="w-12 h-12"
+            className="w-12 h-12 rounded-full"
           />
 
           <span className="text-white text-lg">
@@ -333,9 +336,9 @@ function LanguageModal({
         <div className="flex items-center gap-4">
 
           <img
-            src="https://hatscripts.github.io/circle-flags/flags/ir.svg"
+            src={Irflag}
             alt="English"
-            className="w-12 h-12"
+            className="w-12 h-12 rounded-full"
           />
 
           <div className="text-left">
