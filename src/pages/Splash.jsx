@@ -1,107 +1,133 @@
+import { useNavigate } from "react-router-dom";
+import bgImage from "../assets/splash-bg.png";
+
 export default function Splash() {
+  const navigate = useNavigate();
+
+  const handleStart = () => {
+    navigate("/onboarding");
+  };
+
   return (
-    <div className="min-h-screen bg-[#020617] flex items-center justify-center p-4">
+    <div
+      className="relative min-h-screen overflow-hidden"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/20"></div>
 
-      <div className="w-full max-w-sm">
+      {/* Top Gradient */}
+      <div className="absolute top-0 left-0 right-0 h-72 bg-gradient-to-b from-black/70 to-transparent"></div>
 
-        {/* Card */}
-        <div className="relative overflow-hidden rounded-[32px] border border-yellow-600/30 bg-gradient-to-b from-[#07111f] via-[#04101c] to-[#020617]">
+      {/* Bottom Gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-72 bg-gradient-to-t from-black/80 to-transparent"></div>
 
-          {/* Background */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#f59e0b22,transparent_60%)]" />
+      {/* Content */}
+      <div className="relative z-10 flex flex-col min-h-screen px-6">
 
-          {/* Content */}
-          <div className="relative z-10 px-6 pt-10 pb-8">
+        {/* Logo Area */}
+        <div className="pt-12 text-center">
 
-            {/* Logo */}
-            <h1 className="text-center">
-              <span className="block text-5xl font-black text-yellow-500 tracking-wide">
-                BARIN
-              </span>
+          <h1
+            className="
+              text-6xl
+              font-black
+              tracking-wide
+              text-yellow-500
+              drop-shadow-lg
+            "
+          >
+            BARIN
+          </h1>
 
-              <span className="block text-2xl font-bold text-white">
-                MINING QUEST
-              </span>
-            </h1>
+          <h2
+            className="
+              text-3xl
+              font-bold
+              text-white
+              mt-1
+            "
+          >
+            MINING QUEST
+          </h2>
 
-            {/* Subtitle */}
-            <div className="mt-5 text-center">
+          <div className="mt-4 space-y-1">
+            <p className="text-yellow-400 font-semibold">
+              Learn Mining. Earn Rewards.
+            </p>
 
-              <p className="text-yellow-400 font-medium">
-                Learn Mining. Earn Rewards.
-              </p>
+            <p className="text-white text-lg">
+              Own the Future of
+            </p>
 
-              <p className="text-slate-300 mt-2 leading-relaxed">
-                Own the Future of
-                <br />
-                Critical Minerals.
-              </p>
+            <p className="text-yellow-400 text-xl font-bold">
+              Critical Minerals.
+            </p>
+          </div>
 
-            </div>
+        </div>
 
-            {/* Character */}
-            <div className="mt-8 flex justify-center">
+        {/* Spacer */}
+        <div className="flex-1"></div>
 
-              <img
-                src="https://placehold.co/280x280"
-                alt="miner"
-                className="w-64"
-              />
+        {/* Buttons */}
+        <div className="pb-10">
 
-            </div>
+          <button
+            onClick={handleStart}
+            className="
+              w-full
+              h-14
+              rounded-2xl
+              bg-gradient-to-r
+              from-yellow-500
+              to-yellow-400
+              text-black
+              font-bold
+              text-lg
+              shadow-xl
+              active:scale-95
+              transition
+            "
+          >
+            LET'S GO
+          </button>
 
-            {/* Buttons */}
-            <div className="mt-8 space-y-3">
+          <button
+            className="
+              w-full
+              h-14
+              mt-3
+              rounded-2xl
+              border
+              border-yellow-500/40
+              bg-slate-900/60
+              backdrop-blur
+              text-white
+              text-lg
+              font-bold
+            "
+          >
+            بزن بریم
+          </button>
 
-              <button
-                className="
-                w-full
-                rounded-2xl
-                bg-yellow-500
-                py-4
-                text-lg
-                font-bold
-                text-black
-                transition
-                active:scale-95
-              "
-              >
-                LET'S GO
-              </button>
+          {/* Pagination */}
+          <div className="flex justify-center gap-2 mt-6">
 
-              <button
-                className="
-                w-full
-                rounded-2xl
-                border
-                border-yellow-500/40
-                py-4
-                text-lg
-                font-bold
-                text-white
-              "
-              >
-                بزن بریم
-              </button>
-
-            </div>
-
-            {/* Dots */}
-            <div className="mt-6 flex justify-center gap-2">
-
-              <div className="h-2 w-2 rounded-full bg-yellow-500" />
-              <div className="h-2 w-2 rounded-full bg-slate-600" />
-              <div className="h-2 w-2 rounded-full bg-slate-600" />
-              <div className="h-2 w-2 rounded-full bg-slate-600" />
-
-            </div>
+            <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+            <div className="w-2 h-2 rounded-full bg-gray-500"></div>
+            <div className="w-2 h-2 rounded-full bg-gray-500"></div>
+            <div className="w-2 h-2 rounded-full bg-gray-500"></div>
 
           </div>
 
         </div>
 
       </div>
-
     </div>
   );
 }
