@@ -2,12 +2,7 @@ import { useNavigate } from "react-router-dom";
 import bgImage from "../assets/splash-bg.png";
 
 export default function Splash() {
-  const navigate = useNavigate();
-
-  const handleStart = () => {
-    navigate("/onboarding");
-  };
-
+  
   return (
     <div
       className="relative min-h-screen overflow-hidden"
@@ -55,18 +50,15 @@ export default function Splash() {
             MINING QUEST
           </h2>
 
-          <div className="mt-4 space-y-1">
-            <p className="text-yellow-400 font-semibold">
+          <div className="mt-0 space-y-1">
+            {/* <p className="text-yellow-400 font-semibold">
               Learn Mining. Earn Rewards.
+            </p> */}
+
+            <p className="text-yellow-400 text-lg font-bold">
+              Own the Future of  Critical Minerals.
             </p>
 
-            <p className="text-white text-lg">
-              Own the Future of
-            </p>
-
-            <p className="text-yellow-400 text-xl font-bold">
-              Critical Minerals.
-            </p>
           </div>
 
         </div>
@@ -78,7 +70,7 @@ export default function Splash() {
         <div className="pb-10">
 
           <button
-            onClick={handleStart}
+          
             className="
               w-full
               h-14
@@ -118,10 +110,7 @@ export default function Splash() {
           {/* Pagination */}
           <div className="flex justify-center gap-2 mt-6">
 
-            <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-            <div className="w-2 h-2 rounded-full bg-gray-500"></div>
-            <div className="w-2 h-2 rounded-full bg-gray-500"></div>
-            <div className="w-2 h-2 rounded-full bg-gray-500"></div>
+           
 
           </div>
 

@@ -9,7 +9,8 @@ body,
 }
 
 body {
-  background: #020617;
+ /* background: #020617; */
+ background: white;
   overflow: hidden;
   font-family: Inter, sans-serif;
 }
