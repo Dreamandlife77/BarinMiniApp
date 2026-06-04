@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import bgImage from "../assets/splash-bg.png";
 
 export default function Splash() {
-  
+  const navigate = useNavigate();
   return (
     <div
       className="relative min-h-screen overflow-hidden"
@@ -70,7 +70,7 @@ export default function Splash() {
         <div className="pb-10">
 
           <button
-          
+            onClick={() => navigate("/tutorial")}
             className="
               w-full
               h-14
@@ -90,6 +90,7 @@ export default function Splash() {
           </button>
 
           <button
+            onClick={() => navigate("/tutorial")}
             className="
               w-full
               h-14

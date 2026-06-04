@@ -14,3 +14,12 @@ body {
   overflow: hidden;
   font-family: Inter, sans-serif;
 }
+
+.swiper-pagination-bullet {
+  background: #475569;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f59e0b;
+}
