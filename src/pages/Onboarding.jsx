@@ -117,7 +117,7 @@ export default function Onboarding() {
                   <h1
                     className="
                       text-white
-                      text-4xl
+                      text-xl
                       font-bold
                       mt-4
                       whitespace-pre-line
@@ -129,20 +129,20 @@ export default function Onboarding() {
                   <p
                     className="
                       text-slate-300
-                      mt-4
+                      mt-2
                       leading-relaxed
                     "
                   >
                     {slide.description}
                   </p>
 
-                  <div className="mt-8 flex justify-center">
+                  <div className="mt-1 flex justify-center">
 
                     <img
                       src={slide.image}
                       alt=""
                       className="
-                        w-[280px]
+                        w-[100%]
                         object-contain
                       "
                     />
@@ -176,33 +176,50 @@ export default function Onboarding() {
           ))}
 
         </div>
+        <div className="pb-10">
 
-        {/* BUTTONS */}
+          <button
+            onClick={() => navigate("/tutorial")}
+            className="
+              w-full
+              h-14
+              rounded-2xl
+              bg-gradient-to-r
+              from-yellow-500
+              to-yellow-400
+              text-black
+              font-bold
+              text-lg
+              shadow-xl
+              active:scale-95
+              transition
+            "
+          >
+            LET'S GO
+          </button>
 
-        <button
-          className="
-            h-14
-            rounded-2xl
-            bg-yellow-500
-            text-black
-            font-bold
-          "
-        >
-          NEXT
-        </button>
+          <button
+            onClick={() => navigate("/tutorial")}
+            className="
+              w-full
+              h-14
+              mt-3
+              rounded-2xl
+              border
+              border-yellow-500/40
+              bg-slate-900/60
+              backdrop-blur
+              text-white
+              text-lg
+              font-bold
+            "
+          >
+            بزن بریم
+          </button>
 
-        <button
-          className="
-            mt-3
-            h-14
-            rounded-2xl
-            border
-            border-yellow-500/30
-            text-white
-          "
-        >
-          بعدی
-        </button>
+        
+
+        </div>
 
       </div>
 
