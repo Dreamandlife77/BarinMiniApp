@@ -32,7 +32,7 @@ export const experts = [
     color: "#EAB308",
     avatar: kaveh,
     avatardetail: kavehdetail,
-    quote: "I read the earth — I sense the ore",
+    quote: "The earth never lies — you just need to know where to listen",
     tools: [
     {
       icon: "⛏️",
@@ -64,7 +64,7 @@ export const experts = [
     color: "#06B6D4",
     avatar: aria,
     avatardetail: ariadetail,
-    quote: "I read the earth — I sense the ore",
+    quote: "Data is my compass — every signal hides a secret",
     tools: [
   {
     icon: "🛰️",
@@ -96,7 +96,7 @@ export const experts = [
     color: "#F97316",
     avatar: rostam,
     avatardetail: rostamdetail,
-    quote: "I see the earth from above",
+    quote: "I design the mountain — before I move it",
     tools: [
   {
     icon: "📐",
@@ -128,7 +128,7 @@ export const experts = [
     color: "#22C55E",
     avatar: daniyar,
     avatardetail: daniyardetail,
-    quote: "I see the earth from above",
+    quote: "Raw ore is the input — pure product is my art",
     tools: [
   {
     icon: "⚗️",
@@ -160,7 +160,7 @@ export const experts = [
     color: "#A855F7",
     avatar: shayan,
     avatardetail: shayandetail,
-    quote: "The pit design is mine — I decide where we drill",
+    quote: "Every shipment is a covenant — every blockchain a proof",
     tools: [
   {
     icon: "💼",
@@ -191,7 +191,7 @@ export const experts = [
     color: "#EAB308",
     avatar: sara,
     avatardetail: saradetail,
-    quote: "The pit design is mine — I decide where we drill",
+    quote: "The earth never lies — you just need to know where to listen",
     tools: [
     {
       icon: "⛏️",
@@ -223,7 +223,7 @@ export const experts = [
     color: "#06B6D4",
     avatar: nila,
     avatardetail: niladetail,
-    quote: "I turn raw stone into pure product",
+    quote: "Data is my compass — every signal hides a secret",
     tools: [
   {
     icon: "🛰️",
@@ -255,7 +255,7 @@ export const experts = [
     color: "#F97316",
     avatar: ana,
     avatardetail: anadetail,
-    quote: "I turn raw stone into pure product",
+    quote: "I design the mountain — before I move it",
     tools: [
   {
     icon: "📐",
@@ -287,7 +287,7 @@ export const experts = [
     color: "#22C55E",
     avatar: mahsa,
     avatardetail: mahsadetail,
-    quote: "I sell the mine's product to the world",
+    quote: "Raw ore is the input — pure product is my art",
     tools: [
   {
     icon: "⚗️",
@@ -319,7 +319,7 @@ export const experts = [
     color: "#A855F7",
     avatar: layla,
     avatardetail:layladetail,
-    quote: "I sell the mine's product to the world",
+    quote: "Every shipment is a covenant — every blockchain a proof",
     tools: [
   {
     icon: "💼",
