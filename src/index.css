@@ -11,7 +11,7 @@ body,
 body {
  /* background: #020617; */
  background: white;
-  overflow: hidden;
+  /* overflow: hidden; */
   font-family: Inter, sans-serif;
 }
 

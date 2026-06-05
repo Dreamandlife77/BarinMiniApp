@@ -1,0 +1,342 @@
+import kaveh from "../assets/characters/kaveh.png";
+import kavehdetail from "../assets/characters/kavehdetail.png";
+import aria from "../assets/characters/aria.png";
+import ariadetail from "../assets/characters/ariadetail.png";
+import rostam from "../assets/characters/rostam.png";
+import rostamdetail from "../assets/characters/rostamdetail.png";
+import daniyar from "../assets/characters/daniyar.png";
+import daniyardetail from "../assets/characters/daniyardetail.png";
+import shayan from "../assets/characters/shayan.png";
+import shayandetail from "../assets/characters/shayandetail.png";
+
+import sara from "../assets/characters/sara.png";
+import saradetail from "../assets/characters/saradetail.png";
+import nila from "../assets/characters/nila.png";
+import niladetail from "../assets/characters/niladetail.png";
+import ana from "../assets/characters/ana.png";
+import anadetail from "../assets/characters/anadetail.png";
+import mahsa from "../assets/characters/mahsa.png";
+import mahsadetail from "../assets/characters/mahsadetail.png";
+import layla from "../assets/characters/layla.png";
+import layladetail from "../assets/characters/layladetail.png";
+
+export const experts = [
+  {
+    id: 1,
+    name: "Kaveh",
+    role: "Geologist",
+    phase: "Exploration - Phase 1",
+    level: 3,
+    currentXP: 180,
+    maxXP: 300,
+    color: "#EAB308",
+    avatar: kaveh,
+    avatardetail: kavehdetail,
+    quote: "I read the earth — I sense the ore",
+    tools: [
+    {
+      icon: "⛏️",
+      name: "Rock Hammer",
+    },
+    {
+      icon: "🔍",
+      name: "Magnifying Glass",
+    },
+    {
+      icon: "🗺️",
+      name: "Geological Maps",
+    },
+    {
+      icon: "🧪",
+      name: "Sample Analysis Kit",
+    },
+  ],
+  },
+
+  {
+    id: 2,
+    name: "Aria",
+    role: "Geophysicist",
+    phase: "Exploration - Phase 1",
+    level: 2,
+    currentXP: 140,
+    maxXP: 350,
+    color: "#06B6D4",
+    avatar: aria,
+    avatardetail: ariadetail,
+    quote: "I read the earth — I sense the ore",
+    tools: [
+  {
+    icon: "🛰️",
+    name: "Satellite Data",
+  },
+  {
+    icon: "📡",
+    name: "Magnetic Field Sensors",
+  },
+  {
+    icon: "📱",
+    name: "Digital Tablet",
+  },
+  {
+    icon: "🎧",
+    name: "Headset",
+  },
+],
+  },
+
+  {
+    id: 3,
+    name: "Rostam",
+    role: "Mining Engineer",
+    phase: "Extraction - Phase 2",
+    level: 1,
+    currentXP: 80,
+    maxXP: 500,
+    color: "#F97316",
+    avatar: rostam,
+    avatardetail: rostamdetail,
+    quote: "I see the earth from above",
+    tools: [
+  {
+    icon: "📐",
+    name: "Drill Blueprints",
+  },
+  {
+    icon: "💻",
+    name: "Pit Design Software",
+  },
+  {
+    icon: "🚜",
+    name: "Heavy Machinery",
+  },
+  {
+    icon: "🧨",
+    name: "Explosives Plan",
+  },
+],
+  },
+
+  {
+    id: 4,
+    name: "Daniyar",
+    role: "Process Engineer",
+    phase: "Processing - Phase 3",
+    level: 1,
+    currentXP: 60,
+    maxXP: 600,
+    color: "#22C55E",
+    avatar: daniyar,
+    avatardetail: daniyardetail,
+    quote: "I see the earth from above",
+    tools: [
+  {
+    icon: "⚗️",
+    name: "Mineral Concentrate Flask",
+  },
+  {
+    icon: "📋",
+    name: "Clipboard",
+  },
+  {
+    icon: "🥼",
+    name: "Lab Coat",
+  },
+  {
+    icon: "🪖",
+    name: "Green Safety Helmet",
+  },
+],
+  },
+
+  {
+    id: 5,
+    name: "Shayan",
+    role: "Commerce Director",
+    phase: "Sales & Export - Phase 4",
+    level: 1,
+    currentXP: 40,
+    maxXP: 800,
+    color: "#A855F7",
+    avatar: shayan,
+    avatardetail: shayandetail,
+    quote: "The pit design is mine — I decide where we drill",
+    tools: [
+  {
+    icon: "💼",
+    name: "Briefcase",
+  },
+  {
+    icon: "🌍",
+    name: "World Map",
+  },
+  {
+    icon: "🚢",
+    name: "Cargo Ships",
+  },
+  {
+    icon: "📈",
+    name: "Global Market Analysis",
+  },
+],
+  },
+  {
+    id: 6,
+    name: "Sara",
+    role: "Geologist",
+    phase: "Exploration - Phase 1",
+    level: 2,
+    currentXP: 150,
+    maxXP: 300,
+    color: "#EAB308",
+    avatar: sara,
+    avatardetail: saradetail,
+    quote: "The pit design is mine — I decide where we drill",
+    tools: [
+    {
+      icon: "⛏️",
+      name: "Rock Hammer",
+    },
+    {
+      icon: "🔍",
+      name: "Magnifying Glass",
+    },
+    {
+      icon: "🗺️",
+      name: "Geological Maps",
+    },
+    {
+      icon: "🧪",
+      name: "Sample Analysis Kit",
+    },
+  ],
+  },
+
+  {
+    id: 7,
+    name: "Nila",
+    role: "Geophysicist",
+    phase: "Exploration - Phase 1",
+    level: 3,
+    currentXP: 170,
+    maxXP: 350,
+    color: "#06B6D4",
+    avatar: nila,
+    avatardetail: niladetail,
+    quote: "I turn raw stone into pure product",
+    tools: [
+  {
+    icon: "🛰️",
+    name: "Satellite Data",
+  },
+  {
+    icon: "📡",
+    name: "Magnetic Field Sensors",
+  },
+  {
+    icon: "📱",
+    name: "Digital Tablet",
+  },
+  {
+    icon: "🎧",
+    name: "Headset",
+  },
+],
+  },
+
+  {
+    id: 8,
+    name: "Ana",
+    role: "Mining Engineer",
+    phase: "Extraction - Phase 2",
+    level: 1,
+    currentXP: 30,
+    maxXP: 500,
+    color: "#F97316",
+    avatar: ana,
+    avatardetail: anadetail,
+    quote: "I turn raw stone into pure product",
+    tools: [
+  {
+    icon: "📐",
+    name: "Drill Blueprints",
+  },
+  {
+    icon: "💻",
+    name: "Pit Design Software",
+  },
+  {
+    icon: "🚜",
+    name: "Heavy Machinery",
+  },
+  {
+    icon: "🧨",
+    name: "Explosives Plan",
+  },
+],
+  },
+
+  {
+    id: 9,
+    name: "Mahsa",
+    role: "Process Engineer",
+    phase: "Processing - Phase 3",
+    level: 1,
+    currentXP: 20,
+    maxXP: 600,
+    color: "#22C55E",
+    avatar: mahsa,
+    avatardetail: mahsadetail,
+    quote: "I sell the mine's product to the world",
+    tools: [
+  {
+    icon: "⚗️",
+    name: "Mineral Concentrate Flask",
+  },
+  {
+    icon: "📋",
+    name: "Clipboard",
+  },
+  {
+    icon: "🥼",
+    name: "Lab Coat",
+  },
+  {
+    icon: "🪖",
+    name: "Green Safety Helmet",
+  },
+],
+  },
+
+  {
+    id: 10,
+    name: "Layla",
+    role: "Commerce Director",
+    phase: "Sales & Export - Phase 4",
+    level: 1,
+    currentXP: 50,
+    maxXP: 800,
+    color: "#A855F7",
+    avatar: layla,
+    avatardetail:layladetail,
+    quote: "I sell the mine's product to the world",
+    tools: [
+  {
+    icon: "💼",
+    name: "Briefcase",
+  },
+  {
+    icon: "🌍",
+    name: "World Map",
+  },
+  {
+    icon: "🚢",
+    name: "Cargo Ships",
+  },
+  {
+    icon: "📈",
+    name: "Global Market Analysis",
+  },
+],
+  },
+];

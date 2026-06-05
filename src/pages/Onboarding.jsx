@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 
@@ -45,7 +45,7 @@ const slides = [
 
 export default function Onboarding() {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const navigate = useNavigate();
   const [language, setLanguage] = useState("en");
 
   const [showLanguageModal, setShowLanguageModal] =
@@ -182,7 +182,7 @@ export default function Onboarding() {
         <div className="pb-10">
 
           <button
-            onClick={() => navigate("/tutorial")}
+            onClick={() => navigate("/experts")}
             className="
               w-full
               h-14
@@ -198,11 +198,11 @@ export default function Onboarding() {
               transition
             "
           >
-            LET'S GO
+            Next
           </button>
 
           <button
-            onClick={() => navigate("/tutorial")}
+            onClick={() => navigate("/experts")}
             className="
               w-full
               h-14
