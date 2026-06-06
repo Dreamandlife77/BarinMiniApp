@@ -49,8 +49,8 @@ export default function BottomNav() {
       </Link>
 
       <Link
-        to="/profile"
-        className={activeClass("/profile")}
+        to="/mining"
+        className={activeClass("/mining")}
       >
         <Pickaxe size={22} />
       </Link>

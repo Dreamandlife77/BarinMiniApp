@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { experts } from "../data/experts";
 import BottomNav from "../components/BottomNav";
+import MissionsTab from "../components/MissionsTabs"
 
 export default function ExpertsDetail() {
 
@@ -201,26 +202,7 @@ export default function ExpertsDetail() {
           )}
 
           {activeTab === "missions" && (
-
-            <div className="space-y-3">
-
-              <MissionCard
-                title="Mineral Identification"
-                reward="30 BARIN"
-              />
-
-              <MissionCard
-                title="Deposit Mapping"
-                reward="25 BARIN"
-              />
-
-              <MissionCard
-                title="Exploration Report"
-                reward="40 BARIN"
-              />
-
-            </div>
-
+            <MissionsTab expert={expert} />
           )}
 
           {activeTab === "tools" && (
@@ -334,6 +316,84 @@ function MissionCard({
   );
 }
 
+
+function MissionAccordion({
+  mission,
+}) {
+  const [open, setOpen] =
+    useState(false);
+
+  return (
+    <div
+      className="
+        bg-slate-900
+        rounded-2xl
+        overflow-hidden
+      "
+    >
+      <button
+        onClick={() =>
+          setOpen(!open)
+        }
+        className="
+          w-full
+          p-4
+          flex
+          items-center
+          justify-between
+        "
+      >
+        <div className="text-left">
+
+          <div className="text-white font-medium">
+            {mission.title}
+          </div>
+
+        </div>
+
+        <div className="flex items-center gap-3">
+
+          <span className="text-yellow-500 font-semibold">
+            {mission.reward}
+          </span>
+
+          <span className="text-white">
+            {open ? "▲" : "▼"}
+          </span>
+
+        </div>
+
+      </button>
+
+      {open && (
+        <div className="px-4 pb-4">
+
+          <div className="border-t border-slate-700 pt-4">
+
+            <p className="text-slate-300">
+              {mission.description}
+            </p>
+
+            <div className="mt-3">
+
+              <span className="text-slate-500">
+                Platform:
+              </span>
+
+              <span className="ml-2 text-white">
+                {mission.platform}
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+      )}
+
+    </div>
+  );
+}
 /* ========================== */
 
 function ToolCard({
