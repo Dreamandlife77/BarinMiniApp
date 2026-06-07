@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import { translations } from "../data/translations";
 
 import "swiper/css";
 
@@ -44,10 +45,12 @@ const slides = [
 ];
 
 export default function Onboarding() {
+
+ 
   const [activeIndex, setActiveIndex] = useState(0);
   const navigate = useNavigate();
   const [language, setLanguage] = useState("en");
-
+  const t = translations[language];
   const [showLanguageModal, setShowLanguageModal] =
     useState(false);
 
@@ -68,7 +71,7 @@ export default function Onboarding() {
 
   return (
     <>
-      <div className="min-h-screen bg-[#020617] px-6 py-8 flex flex-col">
+      <div dir={language === "fa" ? "rtl" : "ltr"} className="min-h-screen bg-[#020617] px-6 py-8 flex flex-col">
 
         {/* LANGUAGE BUTTON */}
 
@@ -126,7 +129,7 @@ export default function Onboarding() {
                       whitespace-pre-line
                     "
                   >
-                    {slide.title}
+                    {t.slides[index].title}
                   </h1>
 
                   <p
@@ -136,7 +139,7 @@ export default function Onboarding() {
                       leading-relaxed
                     "
                   >
-                    {slide.description}
+                    {t.slides[index].description}
                   </p>
 
                   <div className="mt-1 flex justify-center">
