@@ -8,6 +8,7 @@ import Missions from "./pages/Missions";
 import Leaderboard from "./pages/Leaderboard";
 import MineralCollection from "./pages/MineralCollection";
 import Mining from "./pages/Mining";
+import EducationDetail from "./pages/EducationDetail";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/minerals" element={<MineralCollection />} />
         <Route path="/mining"  element={<Mining />} />
+        <Route path="/education/:id"  element={<EducationDetail />} />
       </Routes>
     </BrowserRouter>
   );

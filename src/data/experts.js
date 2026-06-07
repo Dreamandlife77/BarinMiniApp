@@ -19,6 +19,11 @@ import mahsa from "../assets/characters/mahsa.png";
 import mahsadetail from "../assets/characters/mahsadetail.png";
 import layla from "../assets/characters/layla.png";
 import layladetail from "../assets/characters/layladetail.png";
+import bridgeEngineering from "../assets/educational/bridge.png";
+import construction from "../assets/educational/construction.png";
+import solarCells from "../assets/educational/solar.png";
+import evBatteries from "../assets/educational/batteries.png";
+import cleanEnergy from "../assets/educational/energy.png";
 
 export const experts = [
   {
@@ -51,6 +56,25 @@ export const experts = [
       name: "Sample Analysis Kit",
     },
   ],
+
+  education: {
+  title: "Bridge Engineering",
+  image: bridgeEngineering,
+
+  minerals: [
+    "Iron",
+    "Silica",
+    "Copper",
+  ],
+
+  fact:
+    "Golden Gate Bridge uses 83,000 tons of steel.",
+
+  connection:
+    "BARIN hematite feeds directly into steel supply chain.",
+
+  color: "#F97316",
+}
   },
 
   {
@@ -83,6 +107,25 @@ export const experts = [
     name: "Headset",
   },
 ],
+education: {
+  title: "Clean Energy",
+  image: cleanEnergy,
+
+  minerals: [
+    "Steel",
+    "Rare Earth",
+    "Lithium",
+    "Copper",
+  ],
+
+  fact:
+    "Clean energy uses 6x more minerals than fossil fuels.",
+
+  connection:
+    "BARIN sits at the core of the global clean energy transition.",
+
+  color: "#06B6D4",
+}
   },
 
   {
@@ -115,6 +158,26 @@ export const experts = [
     name: "Explosives Plan",
   },
 ],
+
+education: {
+  title: "Construction",
+  image: construction,
+
+  minerals: [
+    "Steel",
+    "Aluminium",
+    "Copper",
+    "Gypsum",
+  ],
+
+  fact:
+    "Average home uses 2-5 tons of steel.",
+
+  connection:
+    "Construction is the world's largest consumer of iron ore.",
+
+  color: "#F97316",
+}
   },
 
   {
@@ -147,6 +210,24 @@ export const experts = [
     name: "Green Safety Helmet",
   },
 ],
+education: {
+  title: "Solar Cells",
+  image: solarCells,
+
+  minerals: [
+    "Silicon",
+    "Silver",
+    "Copper",
+  ],
+
+  fact:
+    "95% of solar panels use pure silicon.",
+
+  connection:
+    "BARIN supports the clean energy supply chain upstream.",
+
+  color: "#22C55E",
+}
   },
 
   {
@@ -179,6 +260,25 @@ export const experts = [
     name: "Global Market Analysis",
   },
 ],
+education: {
+  title: "EV Batteries",
+  image: evBatteries,
+
+  minerals: [
+    "Lithium",
+    "Nickel",
+    "Cobalt",
+    "Copper",
+  ],
+
+  fact:
+    "By 2030 the world will need 40x more lithium.",
+
+  connection:
+    "BARIN sits directly in the EV manufacturer supply chain.",
+
+  color: "#A855F7",
+}
   },
   {
     id: 6,
@@ -210,6 +310,24 @@ export const experts = [
       name: "Sample Analysis Kit",
     },
   ],
+  education: {
+  title: "Bridge Engineering",
+  image: bridgeEngineering,
+
+  minerals: [
+    "Iron",
+    "Silica",
+    "Copper",
+  ],
+
+  fact:
+    "Golden Gate Bridge uses 83,000 tons of steel.",
+
+  connection:
+    "BARIN hematite feeds directly into steel supply chain.",
+
+  color: "#F97316",
+}
   },
 
   {
@@ -242,6 +360,25 @@ export const experts = [
     name: "Headset",
   },
 ],
+education: {
+  title: "Clean Energy",
+  image: cleanEnergy,
+
+  minerals: [
+    "Steel",
+    "Rare Earth",
+    "Lithium",
+    "Copper",
+  ],
+
+  fact:
+    "Clean energy uses 6x more minerals than fossil fuels.",
+
+  connection:
+    "BARIN sits at the core of the global clean energy transition.",
+
+  color: "#06B6D4",
+}
   },
 
   {
@@ -274,6 +411,26 @@ export const experts = [
     name: "Explosives Plan",
   },
 ],
+
+education: {
+  title: "Construction",
+  image: construction,
+
+  minerals: [
+    "Steel",
+    "Aluminium",
+    "Copper",
+    "Gypsum",
+  ],
+
+  fact:
+    "Average home uses 2-5 tons of steel.",
+
+  connection:
+    "Construction is the world's largest consumer of iron ore.",
+
+  color: "#F97316",
+}
   },
 
   {
@@ -306,6 +463,24 @@ export const experts = [
     name: "Green Safety Helmet",
   },
 ],
+education: {
+  title: "Solar Cells",
+  image: solarCells,
+
+  minerals: [
+    "Silicon",
+    "Silver",
+    "Copper",
+  ],
+
+  fact:
+    "95% of solar panels use pure silicon.",
+
+  connection:
+    "BARIN supports the clean energy supply chain upstream.",
+
+  color: "#22C55E",
+}
   },
 
   {
@@ -338,5 +513,24 @@ export const experts = [
     name: "Global Market Analysis",
   },
 ],
+education: {
+  title: "EV Batteries",
+  image: evBatteries,
+
+  minerals: [
+    "Lithium",
+    "Nickel",
+    "Cobalt",
+    "Copper",
+  ],
+
+  fact:
+    "By 2030 the world will need 40x more lithium.",
+
+  connection:
+    "BARIN sits directly in the EV manufacturer supply chain.",
+
+  color: "#A855F7",
+}
   },
 ];

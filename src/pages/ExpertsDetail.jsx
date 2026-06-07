@@ -197,6 +197,22 @@ export default function ExpertsDetail() {
                 Specializes in {expert.phase}
               </p>
 
+              <button
+                onClick={() =>
+                  navigate(`/education/${expert.id}`)
+                }
+                className="
+                  mt-4
+                  italic
+                  underline
+                  text-blue-400
+                  hover:text-blue-300
+                  transition
+                "
+              >
+                Educational Module →
+              </button>
+
             </div>
 
           )}
