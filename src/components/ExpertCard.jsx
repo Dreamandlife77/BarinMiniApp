@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Mars, Venus } from "lucide-react";
 
 export default function ExpertCard({ pair, rank }) {
 
@@ -16,7 +17,7 @@ export default function ExpertCard({ pair, rank }) {
   return (
     <div
       onClick={() =>
-        navigate(`/experts/${expert.id}`)
+        navigate(`/home/${expert.id}`)
       }
       className="
         bg-[#091827]
@@ -43,52 +44,51 @@ export default function ExpertCard({ pair, rank }) {
           z-10
         "
       >
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            setGender("male");
-          }}
-          className={`
-            px-3
-            py-1
-            text-xs
-            font-bold
 
-            ${
-              gender === "male"
-                ? "bg-yellow-500 text-black"
-                : "text-white"
-            }
-          `}
-        >
-          ♂
-        </button>
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          setGender("male");
+        }}
+        className={`
+          px-3
+          py-1
+          ${
+            gender === "male"
+              ? "bg-yellow-500 text-black"
+              : "text-white"
+          }
+        `}
+      >
+        <Mars size={12} strokeWidth={3.5} />
+      </button>  
+        
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          setGender("female");
+        }}
+        className={`
+          px-3
+          py-1
+          flex
+          items-center
+          justify-center
 
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            setGender("female");
-          }}
-          className={`
-            px-3
-            py-1
-            text-xs
-            font-semibold
-
-            ${
-              gender === "female"
-                ? "bg-yellow-500 text-black"
-                : "text-white"
-            }
-          `}
-        >
-          ♀
-        </button>
+          ${
+            gender === "female"
+              ? "bg-yellow-500 text-black"
+              : "text-white"
+          }
+        `}
+      >
+        <Venus size={12} strokeWidth={3.5} />
+      </button>
       </div>
 
       {/* Content */}
 
-      <div className="flex gap-4 pt-2">
+      <div className="flex gap-4 pt-6">
 
         <img
           src={expert.avatar}
@@ -167,25 +167,29 @@ export default function ExpertCard({ pair, rank }) {
       {/* Rank Circle */}
 
       <div
+      onClick={(e) => {
+            e.stopPropagation();
+            navigate(`/experts/${expert.id}`)
+          }} 
+
         className="
           absolute
           right-2
           top-2
-          w-8
-          h-8
-          rounded-full
-          flex
-          items-center
-          justify-center
+          rounded-3xl
+          px-4
+          py-1
           text-white
-          font-bold
+          text-xs
+          font-semibold
+          shadow-lg
         "
         style={{
           backgroundColor: expert.color,
         }}
       >
-        {rank}
-      </div>
+    More...
+  </div>
 
     </div>
   );

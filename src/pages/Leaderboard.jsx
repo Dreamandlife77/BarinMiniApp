@@ -11,6 +11,8 @@ import shayan from "../assets/characters/shayan.png";
 import layla from "../assets/characters/layla.png";
 import ana from "../assets/characters/ana.png";
 import nila from "../assets/characters/nila.png";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 const leaderboardData = {
   weekly: {
@@ -219,6 +221,7 @@ const leaderboardData = {
 };
 
 export default function Leaderboard() {
+  const navigate = useNavigate();
   const [period, setPeriod] =
     useState("weekly");
 
@@ -233,6 +236,35 @@ export default function Leaderboard() {
 
   return (
     <div className="min-h-screen bg-[#020617] pb-24">
+
+      <div className="p-4 text-center">
+        <button
+          onClick={() =>
+            navigate(-1)
+          }
+          className="
+          absolute
+          top-3
+          left-3
+          z-20
+          w-10
+          h-10
+          rounded-full
+          bg-yellow/50
+          backdrop-blur
+          flex
+          items-center
+          justify-center
+          text-white
+        "
+      >
+          <ArrowLeft />
+        </button>
+        <h1 className="text-white text-2xl font-bold">
+          Leaderboard
+        </h1>
+
+      </div>
 
       {/* Tabs */}
 
@@ -411,8 +443,8 @@ function TopCard({
 
           ${
             size === "large"
-              ? "w-36 h-52"
-              : "w-28 h-40"
+              ? "w-32 h-45"
+              : "w-25 h-40"
           }
         `}
       >

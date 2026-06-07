@@ -4,6 +4,7 @@ import BottomNav from "../components/BottomNav";
 import { minerals } from "../data/mineralData";
 import { useNavigate } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 export default function Mining() {
   const navigate = useNavigate();
@@ -98,6 +99,34 @@ export default function Mining() {
     <div className="min-h-screen bg-[#020617] pb-24">
 
       {/* Energy */}
+      <div className="p-4 text-center">
+        <button
+          onClick={() =>
+            navigate(-1)
+          }
+          className="
+          absolute
+          top-3
+          left-3
+          z-20
+          w-10
+          h-10
+          rounded-full
+          bg-yellow/50
+          backdrop-blur
+          flex
+          items-center
+          justify-center
+          text-white
+        "
+      >
+          <ArrowLeft />
+        </button>
+        <h1 className="text-white text-2xl font-bold">
+          Tap To Earn
+        </h1>
+
+      </div>
 
       <div className="p-4">
 

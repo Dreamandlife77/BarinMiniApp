@@ -182,7 +182,7 @@ export default function Onboarding() {
         <div className="pb-10">
 
           <button
-            onClick={() => navigate("/experts")}
+            onClick={() => navigate("/home")}
             className="
               w-full
               h-14
@@ -202,7 +202,7 @@ export default function Onboarding() {
           </button>
 
           <button
-            onClick={() => navigate("/experts")}
+            onClick={() => navigate("/home")}
             className="
               w-full
               h-14

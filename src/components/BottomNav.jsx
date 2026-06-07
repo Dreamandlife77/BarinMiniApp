@@ -21,8 +21,8 @@ export default function BottomNav() {
     <div className="fixed bottom-0 left-0 right-0 bg-slate-950 border-t border-slate-800 flex justify-around py-3 z-50">
 
       <Link
-        to="/"
-        className={activeClass("/")}
+        to="/home"
+        className={activeClass("/home")}
       >
         <Home size={22} />
       </Link>

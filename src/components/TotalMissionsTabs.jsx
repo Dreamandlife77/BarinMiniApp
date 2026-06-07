@@ -19,8 +19,8 @@ export default function TotalMissionsTabs({
           key={tab}
           onClick={() => onChange(tab)}
           className={`
-            px-4
-            py-2
+            px-2
+            py-1
             rounded-xl
             whitespace-nowrap
             text-sm

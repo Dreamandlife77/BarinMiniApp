@@ -9,12 +9,15 @@ import Leaderboard from "./pages/Leaderboard";
 import MineralCollection from "./pages/MineralCollection";
 import Mining from "./pages/Mining";
 import EducationDetail from "./pages/EducationDetail";
+import Home from "./pages/Home.jsx"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Splash />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/home/:id" element={<Home />} />
         <Route path="/tutorial" element={<Onboarding />} />
         <Route path="/experts"  element={<Experts />} />
         <Route path="/experts/:id" element={<ExpertsDetail />} />
