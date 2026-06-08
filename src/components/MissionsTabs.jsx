@@ -31,7 +31,7 @@ function getMissionsByRole(role) {
       {
         title: "Mineral Identification",
         description:
-          "Write a post about hematite or magnetite",
+          "Write a post about iron ore",
         reward: "30 BARIN",
         platform: "X (Twitter)",
       },
