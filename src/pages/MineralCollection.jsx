@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -9,30 +9,49 @@ export default function MineralCollection() {
 
   const navigate = useNavigate();
 
+  const [language, setLanguage] =
+  useState("en");
+
+useEffect(() => {
+  const savedLanguage =
+    localStorage.getItem("language") ||
+    "en";
+
+  setLanguage(savedLanguage);
+}, []);
+
   const [filter, setFilter] =
     useState("All");
 
   const filteredMinerals =
-    filter === "All"
-      ? minerals
-      : minerals.filter(
-          (m) =>
-            m.rarity === filter
-        );
+  filter === "All"
+    ? minerals
+    : minerals.filter(
+        (m) =>
+          m.rarity.en === filter
+      );
 
   return (
-    <div className="min-h-screen bg-[#020617] pb-24">
+    <div
+  dir={language === "fa" ? "rtl" : "ltr"}
+  className="min-h-screen bg-[#020617] pb-24"
+>
 
       {/* Header */}
 
       <div
-        className="
-          flex
-          items-center
-          gap-3
-          p-4
-        "
-      >
+  className={`
+    flex
+    items-center
+    gap-3
+    p-4
+    ${
+      language === "fa"
+        ? "flex-row-reverse"
+        : ""
+    }
+  `}
+>
 
         <button
           onClick={() =>
@@ -52,7 +71,9 @@ export default function MineralCollection() {
             font-bold
           "
         >
-          Mineral Collection
+          {language === "fa"
+  ? "مجموعه مواد معدنی"
+  : "Mineral Collection"}
         </h1>
 
       </div>
@@ -93,7 +114,16 @@ export default function MineralCollection() {
               }
             `}
           >
-            {tab}
+            {
+  language === "fa"
+    ? {
+        All: "همه",
+        Common: "رایج",
+        Uncommon: "غیرمعمول",
+        Rare: "کمیاب",
+      }[tab]
+    : tab
+}
           </button>
 
         ))}
@@ -132,7 +162,7 @@ export default function MineralCollection() {
 
             <img
                 src={mineral.image}
-                alt={mineral.name}
+                alt={mineral.name[language]}
                 className="
                 absolute
                 inset-0
@@ -166,25 +196,17 @@ export default function MineralCollection() {
                 "
             >
 
-                <h3
+              <h3
                 className="
-                    text-white
-                    font-bold
-                    text-sm
+                  text-white
+                  font-bold
+                  text-sm
                 "
-                >
-                {mineral.name}
-                </h3>
+              >
+                {mineral.name[language]}
+              </h3>
 
-                <p
-                className="
-                    text-white
-                    font-bold
-                    text-2xl
-                "
-                >
-                {mineral.symbol}
-                </p>
+               
 
             </div>
 
@@ -208,7 +230,7 @@ export default function MineralCollection() {
                     color: mineral.color,
                 }}
                 >
-                {mineral.rarity}
+                {mineral.rarity[language]}
                 </p>
 
             </div>

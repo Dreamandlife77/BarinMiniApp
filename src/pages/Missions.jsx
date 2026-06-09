@@ -1,4 +1,7 @@
-import { useState } from "react";
+import {
+  useState,
+  useEffect,
+} from "react";
 
 import BottomNav from "../components/BottomNav";
 import TotalMissionsTabs from "../components/TotalMissionsTabs";
@@ -10,12 +13,23 @@ import {
 } from "../data/missions";
 
 export default function Missions() {
+
+  const [language, setLanguage] =
+  useState("en");
+
+useEffect(() => {
+  const savedLanguage =
+    localStorage.getItem("language") ||
+    "en";
+
+  setLanguage(savedLanguage);
+}, []);
    const navigate = useNavigate();
   const [tab, setTab] =
     useState("all");
 
   return (
-    <div className="min-h-screen bg-[#020617] pb-24">
+    <div dir={language === "fa" ? "rtl" : "ltr"}  className="min-h-screen bg-[#020617] pb-24">
 
       <div className="p-4 text-center">
         <button
@@ -41,8 +55,10 @@ export default function Missions() {
           <ArrowLeft />
         </button>
         <h1 className="text-white text-2xl font-bold">
-          Missions
-        </h1>
+  {language === "fa"
+    ? "ماموریت‌ها"
+    : "Missions"}
+</h1>
 
       </div>
 
@@ -56,7 +72,11 @@ export default function Missions() {
         {(tab === "all" ||
           tab === "learn") && (
           <MissionSection
-            title="📚 Learn Missions"
+            title={
+  language === "fa"
+    ? "📚 ماموریت‌های آموزشی"
+    : "📚 Learn Missions"
+}
             missions={
               missionCategories.learn
             }
@@ -66,7 +86,11 @@ export default function Missions() {
         {(tab === "all" ||
           tab === "mine") && (
           <MissionSection
-            title="⛏️ Mine Missions"
+            title={
+  language === "fa"
+    ? "⛏️ ماموریت‌های استخراج"
+    : "⛏️ Mine Missions"
+}
             missions={
               missionCategories.mine
             }
@@ -76,7 +100,11 @@ export default function Missions() {
         {(tab === "all" ||
           tab === "social") && (
           <MissionSection
-            title="✖ Social Missions"
+            title={
+  language === "fa"
+    ? "✖ ماموریت‌های اجتماعی"
+    : "✖ Social Missions"
+}
             missions={
               missionCategories.social
             }
@@ -86,7 +114,11 @@ export default function Missions() {
         {(tab === "all" ||
           tab === "community") && (
           <MissionSection
-            title="👥 Community Missions"
+            title={
+  language === "fa"
+    ? "👥 ماموریت‌های جامعه"
+    : "👥 Community Missions"
+}
             missions={
               missionCategories.community
             }

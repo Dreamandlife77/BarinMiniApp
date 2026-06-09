@@ -5,7 +5,9 @@ export default function MissionsTab({
 }) {
 
   const missions =
-    getMissionsByRole(expert.role);
+  getMissionsByRole(
+    expert.role?.en
+  );
 
   return (
     <div className="space-y-3">
@@ -29,156 +31,331 @@ function getMissionsByRole(role) {
 
     Geologist: [
       {
-        title: "Mineral Identification",
-        description:
-          "Write a post about iron ore",
+        title: {
+          en: "Mineral Identification",
+          fa: "شناسایی مواد معدنی",
+        },
+        description: {
+          en: "Write a post about hematite or magnetite.",
+          fa: "درباره هماتیت یا مگنتیت یک پست منتشر کنید.",
+        },
         reward: "30 BARIN",
-        platform: "X (Twitter)",
+        platform: {
+          en: "X (Twitter)",
+          fa: "ایکس (توییتر)",
+        },
       },
+
       {
-        title: "Deposit Mapping",
-        description:
-          "Share BARIN mine infographic on Telegram",
+        title: {
+          en: "Deposit Mapping",
+          fa: "نقشه‌برداری ذخایر",
+        },
+        description: {
+          en: "Share BARIN mine infographic on Telegram.",
+          fa: "اینفوگرافیک معدن BARIN را در تلگرام به اشتراک بگذارید.",
+        },
         reward: "25 BARIN",
-        platform: "Telegram",
+        platform: {
+          en: "Telegram",
+          fa: "تلگرام",
+        },
       },
+
       {
-        title: "Digital Explorer",
-        description:
-          "Refer a new member to BARIN community",
+        title: {
+          en: "Digital Explorer",
+          fa: "اکتشاف‌گر دیجیتال",
+        },
+        description: {
+          en: "Refer a new member to BARIN community.",
+          fa: "یک عضو جدید را به جامعه BARIN معرفی کنید.",
+        },
         reward: "35 BARIN",
-        platform: "Telegram",
+        platform: {
+          en: "Telegram",
+          fa: "تلگرام",
+        },
       },
+
       {
-        title: "Exploration Report",
-        description:
-          "Answer weekly technical question",
+        title: {
+          en: "Exploration Report",
+          fa: "گزارش اکتشاف",
+        },
+        description: {
+          en: "Answer weekly technical question.",
+          fa: "به سوال فنی هفتگی پاسخ دهید.",
+        },
         reward: "40 BARIN",
-        platform: "Telegram",
+        platform: {
+          en: "Telegram",
+          fa: "تلگرام",
+        },
       },
     ],
 
     Geophysicist: [
       {
-        title: "Aerial Map",
-        description:
-          "Explain aerial vs ground exploration methods",
+        title: {
+          en: "Aerial Map",
+          fa: "نقشه هوایی",
+        },
+        description: {
+          en: "Explain aerial vs ground exploration methods.",
+          fa: "تفاوت روش‌های اکتشاف هوایی و زمینی را توضیح دهید.",
+        },
         reward: "35 BARIN",
-        platform: "X (Twitter)",
+        platform: {
+          en: "X (Twitter)",
+          fa: "ایکس (توییتر)",
+        },
       },
+
       {
-        title: "Signal Detection",
-        description:
-          "Write thread about AI in mineral exploration",
+        title: {
+          en: "Signal Detection",
+          fa: "تشخیص سیگنال",
+        },
+        description: {
+          en: "Write a thread about AI in mineral exploration.",
+          fa: "یک رشته‌توییت درباره هوش مصنوعی در اکتشاف معدنی بنویسید.",
+        },
         reward: "45 BARIN",
-        platform: "X (Twitter)",
+        platform: {
+          en: "X (Twitter)",
+          fa: "ایکس (توییتر)",
+        },
       },
+
       {
-        title: "Global Coverage",
-        description:
-          "Introduce BARIN to English-speaking group",
+        title: {
+          en: "Global Coverage",
+          fa: "پوشش جهانی",
+        },
+        description: {
+          en: "Introduce BARIN to an English-speaking group.",
+          fa: "BARIN را به یک گروه انگلیسی‌زبان معرفی کنید.",
+        },
         reward: "40 BARIN",
-        platform: "International",
+        platform: {
+          en: "International",
+          fa: "بین‌المللی",
+        },
       },
+
       {
-        title: "Data Analysis",
-        description:
-          "Create short video about BARIN technical data",
+        title: {
+          en: "Data Analysis",
+          fa: "تحلیل داده",
+        },
+        description: {
+          en: "Create a short video about BARIN technical data.",
+          fa: "یک ویدیوی کوتاه درباره داده‌های فنی BARIN تهیه کنید.",
+        },
         reward: "50 BARIN",
-        platform: "Telegram",
+        platform: {
+          en: "Telegram",
+          fa: "تلگرام",
+        },
       },
     ],
 
     "Mining Engineer": [
       {
-        title: "Pit Design",
-        description:
-          "Explain open-pit vs underground mining",
+        title: {
+          en: "Pit Design",
+          fa: "طراحی معدن روباز",
+        },
+        description: {
+          en: "Explain open-pit vs underground mining.",
+          fa: "تفاوت معدن‌کاری روباز و زیرزمینی را توضیح دهید.",
+        },
         reward: "40 BARIN",
-        platform: "Telegram",
+        platform: {
+          en: "Telegram",
+          fa: "تلگرام",
+        },
       },
+
       {
-        title: "Controlled Blast",
-        description:
-          "Write post with #BarinMining about extraction",
+        title: {
+          en: "Controlled Blast",
+          fa: "انفجار کنترل‌شده",
+        },
+        description: {
+          en: "Write a post with #BarinMining about extraction.",
+          fa: "یک پست با هشتگ #BarinMining درباره استخراج منتشر کنید.",
+        },
         reward: "45 BARIN",
-        platform: "X (Twitter)",
+        platform: {
+          en: "X (Twitter)",
+          fa: "ایکس (توییتر)",
+        },
       },
+
       {
-        title: "Digital Modeling",
-        description:
-          "Create infographic of extraction phases",
+        title: {
+          en: "Digital Modeling",
+          fa: "مدل‌سازی دیجیتال",
+        },
+        description: {
+          en: "Create an infographic of extraction phases.",
+          fa: "اینفوگرافیکی از مراحل استخراج طراحی کنید.",
+        },
         reward: "55 BARIN",
-        platform: "Telegram",
+        platform: {
+          en: "Telegram",
+          fa: "تلگرام",
+        },
       },
+
       {
-        title: "Team Building",
-        description:
-          "Refer 3 new members",
+        title: {
+          en: "Team Building",
+          fa: "توسعه تیم",
+        },
+        description: {
+          en: "Refer 3 new members to BARIN community.",
+          fa: "سه عضو جدید را به جامعه BARIN معرفی کنید.",
+        },
         reward: "60 BARIN",
-        platform: "Telegram",
+        platform: {
+          en: "Telegram",
+          fa: "تلگرام",
+        },
       },
     ],
 
     "Process Engineer": [
       {
-        title: "Digital Crushing",
-        description:
-          "Explain raw ore vs concentrate",
+        title: {
+          en: "Digital Crushing",
+          fa: "خردایش دیجیتال",
+        },
+        description: {
+          en: "Explain difference between raw ore and concentrate.",
+          fa: "تفاوت سنگ معدن خام و کنسانتره را توضیح دهید.",
+        },
         reward: "50 BARIN",
-        platform: "X (Twitter)",
+        platform: {
+          en: "X (Twitter)",
+          fa: "ایکس (توییتر)",
+        },
       },
+
       {
-        title: "Quality Testing",
-        description:
-          "Answer technical processing question",
+        title: {
+          en: "Quality Testing",
+          fa: "آزمایش کیفیت",
+        },
+        description: {
+          en: "Answer a technical processing question.",
+          fa: "به یک سوال فنی درباره فرآوری پاسخ دهید.",
+        },
         reward: "60 BARIN",
-        platform: "Telegram",
+        platform: {
+          en: "Telegram",
+          fa: "تلگرام",
+        },
       },
+
       {
-        title: "Plant Design",
-        description:
-          "Create processing infographic",
+        title: {
+          en: "Plant Design",
+          fa: "طراحی کارخانه",
+        },
+        description: {
+          en: "Create a processing infographic.",
+          fa: "یک اینفوگرافیک از مراحل فرآوری طراحی کنید.",
+        },
         reward: "70 BARIN",
-        platform: "X (Twitter)",
+        platform: {
+          en: "X (Twitter)",
+          fa: "ایکس (توییتر)",
+        },
       },
+
       {
-        title: "Sustainable Processing",
-        description:
-          "Write about ESG approach",
+        title: {
+          en: "Sustainable Processing",
+          fa: "فرآوری پایدار",
+        },
+        description: {
+          en: "Write about BARIN ESG approach.",
+          fa: "درباره رویکرد ESG شرکت BARIN بنویسید.",
+        },
         reward: "55 BARIN",
-        platform: "X (Twitter)",
+        platform: {
+          en: "X (Twitter)",
+          fa: "ایکس (توییتر)",
+        },
       },
     ],
 
     "Commerce Director": [
       {
-        title: "Digital Export",
-        description:
-          "Introduce BARIN to 2 groups",
+        title: {
+          en: "Digital Export",
+          fa: "صادرات دیجیتال",
+        },
+        description: {
+          en: "Introduce BARIN to 2 English-language groups.",
+          fa: "BARIN را به دو گروه انگلیسی‌زبان معرفی کنید.",
+        },
         reward: "70 BARIN",
-        platform: "International",
+        platform: {
+          en: "International",
+          fa: "بین‌المللی",
+        },
       },
+
       {
-        title: "EV Market Analysis",
-        description:
-          "Explain minerals in EV industry",
+        title: {
+          en: "EV Market Analysis",
+          fa: "تحلیل بازار خودروهای برقی",
+        },
+        description: {
+          en: "Explain the role of minerals in the EV industry.",
+          fa: "نقش مواد معدنی در صنعت خودروهای برقی را توضیح دهید.",
+        },
         reward: "65 BARIN",
-        platform: "X (Twitter)",
+        platform: {
+          en: "X (Twitter)",
+          fa: "ایکس (توییتر)",
+        },
       },
+
       {
-        title: "Blockchain in Export",
-        description:
-          "Write blockchain export thread",
+        title: {
+          en: "Blockchain in Export",
+          fa: "بلاکچین در صادرات",
+        },
+        description: {
+          en: "Write a thread about blockchain and mineral exports.",
+          fa: "یک رشته‌توییت درباره بلاکچین و صادرات مواد معدنی بنویسید.",
+        },
         reward: "80 BARIN",
-        platform: "X (Twitter)",
+        platform: {
+          en: "X (Twitter)",
+          fa: "ایکس (توییتر)",
+        },
       },
+
       {
-        title: "BARIN Ambassador",
-        description:
-          "Produce article or podcast",
+        title: {
+          en: "BARIN Ambassador",
+          fa: "سفیر BARIN",
+        },
+        description: {
+          en: "Produce an article or short podcast about BARIN.",
+          fa: "یک مقاله یا پادکست کوتاه درباره BARIN تولید کنید.",
+        },
         reward: "100 BARIN",
-        platform: "Any Platform",
+        platform: {
+          en: "Any Platform",
+          fa: "هر پلتفرمی",
+        },
       },
     ],
   };

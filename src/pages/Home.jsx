@@ -2,11 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { Play } from "lucide-react";
 
 import BottomNav from "../components/BottomNav";
-
+import { translations } from "../data/translations";
 import { experts } from "../data/experts";
 import { minerals } from "../data/mineralData";
 import { useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
 
@@ -29,8 +30,20 @@ export default function Home() {
       currentExpert.maxXP) *
     100;
 
+  const [language, setLanguage] =
+  useState("en");
+
+  useEffect(() => {
+    const savedLanguage =
+      localStorage.getItem("language") || "en";
+
+    setLanguage(savedLanguage);
+  }, []);
+
+  const t = translations[language];
+
   return (
-    <div className="min-h-screen bg-[#020617] pb-24">
+    <div  dir={language === "fa" ? "rtl" : "ltr" } className="min-h-screen bg-[#020617] pb-24" >
       {/* Current Expert */}
 
     <div className="p-4 text-center">
@@ -57,7 +70,7 @@ export default function Home() {
           <ArrowLeft />
         </button>
         <h1 className="text-white text-2xl font-bold">
-          Home
+          {t.home}
         </h1>
 
       </div>
@@ -87,11 +100,11 @@ export default function Home() {
             <div className="flex-1">
 
               <div className="text-slate-400">
-                Current Expert
+                {t.currentExpert}
               </div>
 
               <div className="text-white text-2xl font-bold">
-                {currentExpert.name}
+                {currentExpert.name[language]}
               </div>
 
               <div
@@ -101,13 +114,13 @@ export default function Home() {
                 }}
                 className="font-semibold"
               >
-                {currentExpert.role}
+                {currentExpert.role[language]}
               </div>
 
               <div className="mt-2 flex justify-between">
 
                 <span className="text-white">
-                  Level {currentExpert.level}
+                  {t.Level} {currentExpert.level}
                 </span>
 
                 <span className="text-slate-400">
@@ -159,7 +172,7 @@ export default function Home() {
               font-bold
             "
           >
-            View Experts
+            {t.viewExperts}
           </button>
 
         </div>
@@ -181,7 +194,7 @@ export default function Home() {
           <div className="flex justify-between">
 
             <span className="text-white">
-              ⚡ Energy
+              ⚡ {t.energy}
             </span>
 
             <span className="text-white">
@@ -233,7 +246,7 @@ export default function Home() {
           <div className="flex justify-between mb-3">
 
             <h3 className="text-white font-bold">
-              Today's Missions
+              {t.todayMissions}
             </h3>
 
             <span className="text-yellow-500">
@@ -243,19 +256,19 @@ export default function Home() {
           </div>
 
           <MissionRow
-            title="Mine 300 units of Iron Ore"
+            title={t.mission1}
             progress="200 / 300"
             reward="25 XP"
           />
 
           <MissionRow
-            title="Read: Iron in Bridge Engineering"
+            title={t.mission2}
             progress="1 / 1"
             reward="✓"
           />
 
           <MissionRow
-            title="Open Mineral Cards"
+            title={t.mission3}
             progress="5 / 10"
             reward="20 XP"
           />
@@ -282,7 +295,7 @@ export default function Home() {
             <div>
 
               <div className="text-white text-2xl font-bold">
-                {mineral.name}
+                {mineral.name[language]}
               </div>
 
               <div
@@ -291,7 +304,7 @@ export default function Home() {
                     mineral.color,
                 }}
               >
-                {mineral.rarity}
+                {mineral.rarity[language]}
               </div>
 
             </div>
@@ -369,7 +382,7 @@ export default function Home() {
               font-bold
             "
           >
-            TAP TO MINE
+            {t.tapToMine}
           </button>
 
         </div>

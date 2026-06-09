@@ -1,12 +1,21 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect  } from "react";
 
 import { experts } from "../data/experts";
 import BottomNav from "../components/BottomNav";
 import MissionsTab from "../components/MissionsTabs"
 
 export default function ExpertsDetail() {
+  const [language, setLanguage] =
+  useState("en");
+
+useEffect(() => {
+  const savedLanguage =
+    localStorage.getItem("language") || "en";
+
+  setLanguage(savedLanguage);
+}, []);
 
   const navigate = useNavigate();
 
@@ -22,7 +31,9 @@ export default function ExpertsDetail() {
   if (!expert) {
     return (
       <div className="min-h-screen bg-[#020617] flex items-center justify-center text-white">
-        Character not found
+        {language === "fa"
+  ? "کاراکتر پیدا نشد"
+  : "Character not found"}
       </div>
     );
   }
@@ -31,7 +42,10 @@ export default function ExpertsDetail() {
     (expert.currentXP / expert.maxXP) * 100;
 
   return (
-    <div className="min-h-screen bg-[#020617] pb-24">
+    <div
+      dir={language === "fa" ? "rtl" : "ltr"}
+      className="min-h-screen bg-[#020617] pb-24"
+    >
 
       {/* Hero */}
 
@@ -62,7 +76,7 @@ export default function ExpertsDetail() {
 
       <img
         src={expert.avatardetail}
-        alt={expert.name}
+        alt={expert.name[language]}
         className="
           w-full
           h-auto
@@ -79,30 +93,32 @@ export default function ExpertsDetail() {
         <div className="flex items-end gap-3">
 
           <h1 className="text-white text-3xl font-bold">
-            {expert.name}
+            {expert.name[language]}
           </h1>
 
           <span
-            className="font-semibold mb-1"
-            style={{
-              color: expert.color,
-            }}
-          >
-            {expert.role}
-          </span>
+  className="font-semibold mb-1"
+  style={{
+    color: expert.color,
+  }}
+>
+  {expert.role[language]}
+</span>
 
         </div>
 
         <p className="text-slate-400">
-          {expert.phase}
+           {expert.phase[language]}
         </p>
 
-        <p className="font-semibold mt-2"
-            style={{
-              color: expert.color,
-            }}>
-          {expert.quote}
-        </p>
+        <p
+  className="font-semibold mt-2"
+  style={{
+    color: expert.color,
+  }}
+>
+  {expert.quote[language]}
+</p>
 
         {/* XP */}
 
@@ -111,7 +127,9 @@ export default function ExpertsDetail() {
           <div className="flex justify-between">
 
             <span className="text-white">
-              Level {expert.level}
+              {language === "fa"
+  ? `سطح ${expert.level}`
+  : `Level ${expert.level}`}
             </span>
 
             <span className="text-slate-400">
@@ -144,7 +162,7 @@ export default function ExpertsDetail() {
               setActiveTab("about")
             }
           >
-            About
+            {language === "fa" ? "درباره" : "About"}
           </TabButton>
 
           <TabButton
@@ -153,7 +171,7 @@ export default function ExpertsDetail() {
               setActiveTab("missions")
             }
           >
-            Missions
+            {language === "fa" ? "ماموریت‌ها" : "Missions"}
           </TabButton>
 
           <TabButton
@@ -162,7 +180,7 @@ export default function ExpertsDetail() {
               setActiveTab("tools")
             }
           >
-            Tools
+            {language === "fa" ? "ابزارها" : "Tools"}
           </TabButton>
 
           <TabButton
@@ -171,7 +189,7 @@ export default function ExpertsDetail() {
               setActiveTab("stats")
             }
           >
-            Stats
+            {language === "fa" ? "آمار" : "Stats"}
           </TabButton>
 
         </div>
@@ -189,12 +207,15 @@ export default function ExpertsDetail() {
               </h3>
 
               <p className="text-slate-300 mt-3">
-                {expert.name} is a professional{" "}
-                {expert.role}.
+                  {language === "fa"
+  ? `${expert.name.fa} یک ${expert.role.fa} حرفه‌ای است.`
+  : `${expert.name.en} is a professional ${expert.role.en}.`}
               </p>
 
               <p className="text-slate-400 mt-3">
-                Specializes in {expert.phase}
+                {language === "fa"
+  ? `متخصص در ${expert.phase.fa}`
+  : `Specializes in ${expert.phase.en}`}
               </p>
 
               <button
@@ -210,7 +231,9 @@ export default function ExpertsDetail() {
                   transition
                 "
               >
-                Educational Module →
+                {language === "fa"
+  ? "ماژول آموزشی ←"
+  : "Educational Module →"}
               </button>
 
             </div>
@@ -230,7 +253,7 @@ export default function ExpertsDetail() {
                 <ToolCard
                   key={index}
                   icon={tool.icon}
-                  name={tool.name}
+                  name={tool.name[language]}
                 />
 
               ))}
@@ -244,22 +267,22 @@ export default function ExpertsDetail() {
             <div className="bg-slate-900 rounded-2xl p-4">
 
               <StatRow
-                label="Level"
+                label={language === "fa" ? "سطح" : "Level"}
                 value={expert.level}
               />
 
               <StatRow
-                label="Current XP"
+                label={language === "fa" ? "XP فعلی" : "Current XP"}
                 value={`${expert.currentXP}/${expert.maxXP}`}
               />
 
               <StatRow
-                label="Weekly Rank"
+                label={language === "fa" ? "رتبه هفتگی" : "Weekly Rank"}
                 value={`#${expert.id}`}
               />
 
               <StatRow
-                label="BARIN Earned"
+                label={language === "fa" ? "BARIN کسب شده" : "BARIN Earned"}
                 value="245"
               />
 

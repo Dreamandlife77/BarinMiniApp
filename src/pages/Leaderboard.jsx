@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BottomNav from "../components/BottomNav";
 
 import aria from "../assets/characters/aria.png";
@@ -220,7 +220,50 @@ const leaderboardData = {
   },
 };
 
+const t = {
+  en: {
+    title: "Leaderboard",
+    weekly: "Weekly",
+    monthly: "Monthly",
+    alltime: "All Time",
+    reset: "Resets in:",
+    xp: "XP",
+  },
+
+  fa: {
+    title: "جدول رتبه‌بندی",
+    weekly: "هفتگی",
+    monthly: "ماهانه",
+    alltime: "همه زمان‌ها",
+    reset: "زمان باقی‌مانده:",
+    xp: "امتیاز",
+  },
+};
+
+const persianNames = {
+  Kaveh: "کاوه",
+  Aria: "آریا",
+  Sara: "سارا",
+  Daniyar: "دانیار",
+  Mahsa: "مهسا",
+  Rostam: "رستم",
+  Shayan: "شایان",
+  Layla: "لیلا",
+  Ana: "آنا",
+  Nila: "نیلا",
+};
+
 export default function Leaderboard() {
+
+  const [language, setLanguage] =
+  useState("en");
+
+useEffect(() => {
+  const savedLanguage =
+    localStorage.getItem("language") || "en";
+
+  setLanguage(savedLanguage);
+}, []);
   const navigate = useNavigate();
   const [period, setPeriod] =
     useState("weekly");
@@ -235,7 +278,10 @@ export default function Leaderboard() {
     currentData.rankings;
 
   return (
-    <div className="min-h-screen bg-[#020617] pb-24">
+    <div
+  dir={language === "fa" ? "rtl" : "ltr"}
+  className="min-h-screen bg-[#020617] pb-24"
+>
 
       <div className="p-4 text-center">
         <button
@@ -261,7 +307,7 @@ export default function Leaderboard() {
           <ArrowLeft />
         </button>
         <h1 className="text-white text-2xl font-bold">
-          Leaderboard
+          {t[language].title}
         </h1>
 
       </div>
@@ -302,10 +348,14 @@ export default function Leaderboard() {
                 }
               `}
             >
-              {tab === "alltime"
-                ? "All Time"
-                : tab.charAt(0).toUpperCase() +
-                  tab.slice(1)}
+              {tab === "weekly" &&
+                t[language].weekly}
+
+              {tab === "monthly" &&
+                t[language].monthly}
+
+              {tab === "alltime" &&
+                t[language].alltime}
             </button>
 
           ))}
@@ -328,16 +378,19 @@ export default function Leaderboard() {
 
         <TopCard
           {...topThree[0]}
+          language={language}
           size="small"
         />
 
         <TopCard
           {...topThree[1]}
+          language={language}
           size="large"
         />
 
         <TopCard
           {...topThree[2]}
+          language={language}
           size="small"
         />
 
@@ -377,13 +430,17 @@ export default function Leaderboard() {
             <div className="ml-3 flex-1">
 
               <div className="text-white">
-                {player.name}
+                {language === "fa"
+  ? persianNames[player.name]
+  : player.name}
               </div>
 
             </div>
 
             <div className="text-slate-300">
-              {player.xp.toLocaleString()} XP
+              {player.xp.toLocaleString()}
+{" "}
+{t[language].xp}
             </div>
 
           </div>
@@ -400,7 +457,9 @@ export default function Leaderboard() {
           mt-8
         "
       >
-        ⏳ Resets in: 3d 12h 45m
+        {language === "fa"
+  ? "⏳ زمان باقی‌مانده: ۳ روز ۱۲ ساعت ۴۵ دقیقه"
+  : "⏳ Resets in: 3d 12h 45m"}
       </div>
 
       <BottomNav />
@@ -415,6 +474,7 @@ function TopCard({
   xp,
   rank,
   size,
+  language,
 }) {
   const isFirst = rank === 1;
 
@@ -476,11 +536,17 @@ function TopCard({
         <div className="text-center mt-3">
 
           <div className="text-white font-bold">
-            {name}
+            {language === "fa"
+  ? persianNames[name]
+  : name}
           </div>
 
           <div className="text-slate-300 text-sm mt-1">
-            {xp.toLocaleString()} XP
+           {xp.toLocaleString()}
+{" "}
+{language === "fa"
+  ? "امتیاز"
+  : "XP"}
           </div>
 
         </div>

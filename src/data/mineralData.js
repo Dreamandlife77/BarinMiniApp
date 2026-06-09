@@ -7,9 +7,15 @@ import gold from "../assets/minerals/Au.png";
 export const minerals = [
   {
     id: 1,
-    name: "Iron / Hematite",
+    name: {
+      en: "Iron / Hematite",
+      fa: "آهن / هماتیت",
+    },
+    rarity: {
+      en: "Common",
+      fa: "رایج",
+    },
     symbol: "Fe",
-    rarity: "Common",
     color: "#EF4444",
     reward: 10,
     hp: 300,
@@ -18,9 +24,15 @@ export const minerals = [
 
   {
     id: 2,
-    name: "Copper",
+    name: {
+      en: "Copper",
+      fa: "مس",
+    },
+    rarity: {
+      en: "Common",
+      fa: "رایج",
+    },
     symbol: "Cu",
-    rarity: "Common",
     color: "#F97316",
     reward: 15,
     hp: 400,
@@ -29,9 +41,15 @@ export const minerals = [
 
   {
     id: 3,
-    name: "Lithium",
+    name: {
+      en: "Lithium",
+      fa: "لیتیوم",
+    },
+    rarity: {
+      en: "Uncommon",
+      fa: "غیرمعمول",
+    },
     symbol: "Li",
-    rarity: "Uncommon",
     color: "#22C55E",
     reward: 25,
     hp: 600,
@@ -40,9 +58,15 @@ export const minerals = [
 
   {
     id: 4,
-    name: "Nickel",
+    name: {
+      en: "Nickel",
+      fa: "نیکل",
+    },
+    rarity: {
+      en: "Uncommon",
+      fa: "غیرمعمول",
+    },
     symbol: "Ni",
-    rarity: "Uncommon",
     color: "#A855F7",
     reward: 20,
     hp: 500,
@@ -51,9 +75,15 @@ export const minerals = [
 
   {
     id: 5,
-    name: "Gold",
+    name: {
+      en: "Gold",
+      fa: "طلا",
+    },
+    rarity: {
+      en: "Rare",
+      fa: "کمیاب",
+    },
     symbol: "Au",
-    rarity: "Rare",
     color: "#EAB308",
     reward: 50,
     hp: 800,

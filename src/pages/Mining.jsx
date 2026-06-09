@@ -7,6 +7,18 @@ import { ChevronRight } from "lucide-react";
 import { ArrowLeft } from "lucide-react";
 
 export default function Mining() {
+
+  const [language, setLanguage] =
+  useState("en");
+
+useEffect(() => {
+  const savedLanguage =
+    localStorage.getItem("language") ||
+    "en";
+
+  setLanguage(savedLanguage);
+}, []);
+
   const navigate = useNavigate();
 
   const [energy, setEnergy] =
@@ -96,7 +108,10 @@ export default function Mining() {
     100;
 
   return (
-    <div className="min-h-screen bg-[#020617] pb-24">
+    <div
+  dir={language === "fa" ? "rtl" : "ltr"}
+  className="min-h-screen bg-[#020617] pb-24"
+>
 
       {/* Energy */}
       <div className="p-4 text-center">
@@ -123,7 +138,9 @@ export default function Mining() {
           <ArrowLeft />
         </button>
         <h1 className="text-white text-2xl font-bold">
-          Tap To Earn
+          {language === "fa"
+  ? "استخراج و کسب درآمد"
+  : "Tap To Earn"}
         </h1>
 
       </div>
@@ -141,7 +158,9 @@ export default function Mining() {
           <div className="flex justify-between">
 
             <span className="text-white">
-              ⚡ Energy
+              ⚡ {language === "fa"
+  ? "انرژی"
+  : "Energy"}
             </span>
 
             <span className="text-white">
@@ -263,7 +282,7 @@ export default function Mining() {
                     selectedMineral.color,
                 }}
               >
-                {selectedMineral.name}
+                {selectedMineral.name[language]}
               </h2>
 
               <p
@@ -272,7 +291,7 @@ export default function Mining() {
                     selectedMineral.color,
                 }}
               >
-                {selectedMineral.rarity}
+                {selectedMineral.rarity[language]}
               </p>
 
             </div>
@@ -280,7 +299,9 @@ export default function Mining() {
             <div className="text-right">
 
               <div className="text-white">
-                Combo
+                {language === "fa"
+  ? "کمبو"
+  : "Combo"}
               </div>
 
               <div
@@ -290,7 +311,10 @@ export default function Mining() {
                   font-bold
                 "
               >
-                x{combo}
+                x
+{language === "fa"
+  ? combo.toLocaleString("fa-IR")
+  : combo}
               </div>
 
             </div>
@@ -339,7 +363,9 @@ export default function Mining() {
                 font-bold
               "
             >
-              CRIT 2x
+             {language === "fa"
+  ? "ضربه ۲×"
+  : "CRIT 2x"}
             </div>
 
           )}
@@ -351,7 +377,9 @@ export default function Mining() {
             <div className="flex justify-between">
 
               <span className="text-white">
-                HP
+                {language === "fa"
+  ? "سلامت"
+  : "HP"}
               </span>
 
               <span className="text-white">
@@ -399,7 +427,9 @@ export default function Mining() {
           >
 
             <div className="text-slate-400">
-              Possible Reward
+              {language === "fa"
+  ? "پاداش احتمالی"
+  : "Possible Reward"}
             </div>
 
             <div
@@ -423,7 +453,9 @@ export default function Mining() {
               text-white
             "
           >
-            Total Earned:
+            {language === "fa"
+  ? "مجموع درآمد:"
+  : "Total Earned:"}
             {" "}
             <span className="text-yellow-500">
               {barin}

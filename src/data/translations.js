@@ -1,10 +1,23 @@
 export const translations = {
   en: {
     next: "Next",
+    Level: "Level",
     letsGo: "Let's Go",
     chooseLanguage: "Choose Language",
     confirm: "CONFIRM",
     confirmFa: "تأیید",
+    home: "Home",
+    currentExpert: "Current Expert",
+    viewExperts: "View Experts",
+    energy: "Energy",
+    todayMissions: "Today's Missions",
+    tapToMine: "TAP TO MINE",
+    miningExperts: "Mining Experts",
+
+
+    mission1: "Mine 300 units of Iron Ore",
+    mission2: "Read: Iron in Bridge Engineering",
+    mission3: "Open Mineral Cards",
 
     changeLater:
       "You can change language later from settings.",
@@ -38,17 +51,29 @@ export const translations = {
 
   fa: {
     next: "بعدی",
+    Level: "سطح",
     letsGo: "بزن بریم",
     chooseLanguage: "انتخاب زبان",
     confirm: "تأیید",
     confirmFa: "تأیید",
+    home: "خانه",
+    currentExpert: "متخصص فعلی",
+    viewExperts: "مشاهده متخصصان",
+    energy: "انرژی",
+    todayMissions: "ماموریت‌های امروز",
+    tapToMine: "شروع استخراج",
+
+    mission1: "استخراج ۳۰۰ واحد سنگ آهن",
+    mission2: "مطالعه: آهن در مهندسی پل",
+    mission3: "باز کردن کارت‌های معدنی",
+    miningExperts: "متخصصان معدن",
 
     changeLater:
       "بعداً می‌توانید زبان را از بخش تنظیمات تغییر دهید.",
 
     slides: [
       {
-        title: "به BARIN Mining Quest\nخوش آمدید",
+        title: "به ماجراجویی معدنی بارین\nخوش آمدید",
         description:
           "یک بازی آموزشی معدن که در آن یاد می‌گیرید، بازی می‌کنید و توکن BARIN به دست می‌آورید.",
       },

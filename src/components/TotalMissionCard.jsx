@@ -2,9 +2,25 @@ import {
   CheckCircle,
 } from "lucide-react";
 
+import {
+  useState,
+  useEffect,
+} from "react";
+
 export default function MissionCard({
   mission,
 }) {
+  const [language, setLanguage] =
+    useState("en");
+
+  useEffect(() => {
+    const savedLanguage =
+      localStorage.getItem("language") ||
+      "en";
+
+    setLanguage(savedLanguage);
+  }, []);
+
   const percentage =
     mission.total
       ? (mission.progress /
@@ -21,19 +37,20 @@ export default function MissionCard({
       "
     >
       <div className="flex justify-between">
-
         <div>
-
           <h4 className="text-white font-semibold">
-            {mission.title}
+            {mission.title?.[language]}
           </h4>
 
           {mission.description && (
             <p className="text-slate-400 text-sm">
-              {mission.description}
+              {
+                mission.description[
+                  language
+                ]
+              }
             </p>
           )}
-
         </div>
 
         {mission.completed && (
@@ -42,7 +59,6 @@ export default function MissionCard({
             size={22}
           />
         )}
-
       </div>
 
       {mission.total && (
@@ -68,7 +84,8 @@ export default function MissionCard({
           </div>
 
           <div className="mt-1 text-right text-slate-400 text-sm">
-            {mission.progress} / {mission.total}
+            {mission.progress} /{" "}
+            {mission.total}
           </div>
         </>
       )}
@@ -76,7 +93,6 @@ export default function MissionCard({
       <div className="mt-2 text-yellow-500 font-semibold">
         {mission.reward}
       </div>
-
     </div>
   );
 }

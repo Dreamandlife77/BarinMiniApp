@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Mars, Venus } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function ExpertCard({ pair, rank }) {
 
@@ -13,9 +13,20 @@ export default function ExpertCard({ pair, rank }) {
 
   const progress =
     (expert.currentXP / expert.maxXP) * 100;
+  
+    const [language, setLanguage] =
+      useState("en");
+
+    useEffect(() => {
+      const savedLanguage =
+        localStorage.getItem("language") || "en";
+
+      setLanguage(savedLanguage);
+    }, []);
 
   return (
     <div
+      dir={language === "fa" ? "rtl" : "ltr"}
       onClick={() =>
         navigate(`/home/${expert.id}`)
       }
@@ -92,7 +103,7 @@ export default function ExpertCard({ pair, rank }) {
 
         <img
           src={expert.avatar}
-          alt={expert.name}
+          alt={expert.name[language]}
           className="
             rounded-xl
             w-22
@@ -112,7 +123,7 @@ export default function ExpertCard({ pair, rank }) {
                 font-bold
               "
             >
-              {expert.name}
+              {expert.name[language]}
             </h4>
 
             <p
@@ -121,19 +132,21 @@ export default function ExpertCard({ pair, rank }) {
                 color: expert.color,
               }}
             >
-              {expert.role}
+              {expert.role[language]}
             </p>
 
           </div>
 
           <p className="text-slate-400 text-sm">
-            {expert.phase}
+            {expert.phase[language]}
           </p>
 
           <div className="flex justify-between mt-1">
 
             <span className="text-white text-sm">
-              Level {expert.level}
+              {language === "fa"
+              ? `سطح ${expert.level}`
+              : `Level ${expert.level}`}
             </span>
 
             <span className="text-slate-400 text-sm">
@@ -188,7 +201,9 @@ export default function ExpertCard({ pair, rank }) {
           backgroundColor: expert.color,
         }}
       >
-    More...
+    {language === "fa"
+      ? "بیشتر"
+      : "More..."}
   </div>
 
     </div>

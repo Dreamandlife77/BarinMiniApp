@@ -3,10 +3,26 @@ import BottomNav from "../components/BottomNav";
 import { expertPairs } from "../data/expertPairs";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { useState, useEffect } from "react";
+import { translations } from "../data/translations";
 export default function Experts() {
-  const navigate = useNavigate();
+   const navigate = useNavigate();
+   const [language, setLanguage] =
+    useState("en");
+
+  useEffect(() => {
+    const savedLanguage =
+      localStorage.getItem("language") || "en";
+
+    setLanguage(savedLanguage);
+  }, []);
+
+  const t = translations[language];
   return (
-    <div className="min-h-screen bg-[#020617] pb-24">
+    <div
+      dir={language === "fa" ? "rtl" : "ltr"}
+      className="min-h-screen bg-[#020617] pb-24"
+    >
 
       <div className="p-4 text-center">
         <button
@@ -32,7 +48,8 @@ export default function Experts() {
           <ArrowLeft />
         </button>
         <h1 className="text-white text-2xl font-bold">
-          Mining Experts
+          {t.miningExperts}
+          
         </h1>
 
       </div>

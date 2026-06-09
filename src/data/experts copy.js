@@ -524,72 +524,36 @@ export const experts = [
   },
 },
 
-{
-  id: 6,
-
-  name: {
-    en: "Sara",
-    fa: "سارا",
-  },
-
-  role: {
-    en: "Geologist",
-    fa: "زمین‌شناس",
-  },
-
-  phase: {
-    en: "Exploration - Phase 1",
-    fa: "اکتشاف - فاز ۱",
-  },
-
-  level: 2,
-  currentXP: 150,
-  maxXP: 300,
-
-  color: "#EAB308",
-
-  avatar: sara,
-  avatardetail: saradetail,
-
-  quote: {
-    en: "The earth never lies — you just need to know where to listen",
-    fa: "زمین هرگز دروغ نمی‌گوید؛ فقط باید بدانی کجا گوش بدهی.",
-  },
-
-  tools: [
+ {
+    id: 6,
+    name: "Sara",
+    role: "Geologist",
+    phase: "Exploration - Phase 1",
+    level: 2,
+    currentXP: 150,
+    maxXP: 300,
+    color: "#EAB308",
+    avatar: sara,
+    avatardetail: saradetail,
+    quote: "The earth never lies — you just need to know where to listen",
+    tools: [
     {
       icon: "⛏️",
-      name: {
-        en: "Rock Hammer",
-        fa: "چکش زمین‌شناسی",
-      },
+      name: "Rock Hammer",
     },
-
     {
       icon: "🔍",
-      name: {
-        en: "Magnifying Glass",
-        fa: "ذره‌بین",
-      },
+      name: "Magnifying Glass",
     },
-
     {
       icon: "🗺️",
-      name: {
-        en: "Geological Maps",
-        fa: "نقشه‌های زمین‌شناسی",
-      },
+      name: "Geological Maps",
     },
-
     {
       icon: "🧪",
-      name: {
-        en: "Sample Analysis Kit",
-        fa: "کیت تحلیل نمونه‌های معدنی",
-      },
+      name: "Sample Analysis Kit",
     },
   ],
-
   education: {
     title: {
       en: "Bridge Engineering",
@@ -597,17 +561,8 @@ export const experts = [
     },
 
     minerals: {
-      en: [
-        "Iron",
-        "Silica",
-        "Copper",
-      ],
-
-      fa: [
-        "آهن",
-        "سیلیس",
-        "مس",
-      ],
+      en: ["Iron", "Silica", "Copper"],
+      fa: ["آهن", "سیلیس", "مس"],
     },
 
     fact: {
@@ -621,9 +576,9 @@ export const experts = [
     },
 
     image: bridgeEngineering,
-    color: "#EAB308",
+    color: "#F97316",
   },
-},
+  },
 
 {
   id: 7,
@@ -730,108 +685,56 @@ export const experts = [
 },
 
 {
-  id: 8,
-
-  name: {
-    en: "Ana",
-    fa: "آنا",
+    id: 8,
+    name: "Ana",
+    role: "Mining Engineer",
+    phase: "Extraction - Phase 2",
+    level: 1,
+    currentXP: 30,
+    maxXP: 500,
+    color: "#F97316",
+    avatar: ana,
+    avatardetail: anadetail,
+    quote: "I design the mountain — before I move it",
+    tools: [
+  {
+    icon: "📐",
+    name: "Drill Blueprints",
   },
-
-  role: {
-    en: "Mining Engineer",
-    fa: "مهندس معدن",
+  {
+    icon: "💻",
+    name: "Pit Design Software",
   },
-
-  phase: {
-    en: "Extraction - Phase 2",
-    fa: "استخراج - فاز ۲",
+  {
+    icon: "🚜",
+    name: "Heavy Machinery",
   },
-
-  level: 1,
-  currentXP: 30,
-  maxXP: 500,
-
-  color: "#F97316",
-
-  avatar: ana,
-  avatardetail: anadetail,
-
-  quote: {
-    en: "I design the mountain — before I move it",
-    fa: "پیش از آنکه کوه را جابه‌جا کنم، آن را طراحی می‌کنم.",
+  {
+    icon: "🧨",
+    name: "Explosives Plan",
   },
+],
 
-  tools: [
-    {
-      icon: "📐",
-      name: {
-        en: "Drill Blueprints",
-        fa: "نقشه‌های حفاری",
-      },
-    },
+education: {
+  title: "Construction",
+  image: construction,
 
-    {
-      icon: "💻",
-      name: {
-        en: "Pit Design Software",
-        fa: "نرم‌افزار طراحی معدن روباز",
-      },
-    },
-
-    {
-      icon: "🚜",
-      name: {
-        en: "Heavy Machinery",
-        fa: "ماشین‌آلات سنگین",
-      },
-    },
-
-    {
-      icon: "🧨",
-      name: {
-        en: "Explosives Plan",
-        fa: "طرح انفجار",
-      },
-    },
+  minerals: [
+    "Steel",
+    "Aluminium",
+    "Copper",
+    "Gypsum",
   ],
 
-  education: {
-    title: {
-      en: "Construction",
-      fa: "ساخت‌وساز",
-    },
+  fact:
+    "Average home uses 2-5 tons of steel.",
 
-    image: construction,
+  connection:
+    "Construction is the world's largest consumer of iron ore.",
 
-    minerals: {
-      en: [
-        "Steel",
-        "Aluminium",
-        "Copper",
-        "Gypsum",
-      ],
-
-      fa: [
-        "فولاد",
-        "آلومینیوم",
-        "مس",
-        "گچ",
-      ],
-    },
-
-    fact: {
-      en: "Average home uses 2–5 tons of steel.",
-      fa: "یک خانه معمولی بین ۲ تا ۵ تن فولاد مصرف می‌کند.",
-    },
-
-    connection: {
-      en: "Construction is the world's largest consumer of iron ore.",
-      fa: "صنعت ساخت‌وساز بزرگ‌ترین مصرف‌کننده سنگ آهن در جهان است.",
-    },
-
-    color: "#F97316",
+  color: "#F97316",
+}
   },
-},
 
 {
   id: 9,

@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-
-
 import "swiper/css";
 
 import tutorial1 from "../assets/tutorial1.png";
@@ -13,6 +11,8 @@ import tutorial4 from "../assets/tutorial4.png";
 
 import Irflag from "../assets/IR.jpg"
 import USflag from "../assets/US.png"
+
+import { translations } from "../data/translations";
 
 const slides = [
   {
@@ -48,6 +48,7 @@ export default function Onboarding() {
   const [activeIndex, setActiveIndex] = useState(0);
   const navigate = useNavigate();
   const [language, setLanguage] = useState("en");
+  const t = translations[language];
 
   const [showLanguageModal, setShowLanguageModal] =
     useState(false);
@@ -69,7 +70,7 @@ export default function Onboarding() {
 
   return (
     <>
-      <div className="min-h-screen bg-[#020617] px-6 py-8 flex flex-col">
+      <div   className="min-h-screen bg-[#020617] px-6 py-8 flex flex-col">
 
         {/* LANGUAGE BUTTON */}
 
@@ -112,7 +113,7 @@ export default function Onboarding() {
             {slides.map((slide, index) => (
               <SwiperSlide key={index}>
 
-                <div className="pt-8">
+                <div className="pt-8" dir={language === "fa" ? "rtl" : "ltr"}>
 
                   <span className="text-yellow-500 font-bold">
                     {index + 1}/4
@@ -127,7 +128,7 @@ export default function Onboarding() {
                       whitespace-pre-line
                     "
                   >
-                    {slide.title}
+                    {t.slides[index].title}
                   </h1>
 
                   <p
@@ -137,7 +138,7 @@ export default function Onboarding() {
                       leading-relaxed
                     "
                   >
-                    {slide.description}
+                    {t.slides[index].description}
                   </p>
 
                   <div className="mt-1 flex justify-center">
@@ -199,10 +200,10 @@ export default function Onboarding() {
               transition
             "
           >
-            Next
+            {t.next}
           </button>
 
-          <button
+          {/* <button
             onClick={() => navigate("/home")}
             className="
               w-full
@@ -219,7 +220,7 @@ export default function Onboarding() {
             "
           >
             بزن بریم
-          </button>
+          </button> */}
 
         
 
@@ -232,6 +233,7 @@ export default function Onboarding() {
       {showLanguageModal && (
         <LanguageModal
           currentLanguage={language}
+          language={language}
           onConfirm={confirmLanguage}
           onClose={() =>
             setShowLanguageModal(false)
@@ -245,14 +247,18 @@ export default function Onboarding() {
 function LanguageModal({
   currentLanguage,
   onConfirm,
+  language,
   onClose,
 }) {
   const [selected, setSelected] = useState(
     currentLanguage
   );
 
+  const t = translations[language];
+
   return (
     <div
+
       className="
         fixed
         inset-0
@@ -273,7 +279,7 @@ function LanguageModal({
           mb-10
         "
       >
-        Choose Language
+        {t.chooseLanguage}
       </h2>
 
       {/* ENGLISH */}
@@ -377,25 +383,8 @@ function LanguageModal({
           font-bold
         "
       >
-        CONFIRM
+        {t.confirm}
       </button>
-
-      <button
-        onClick={() =>
-          onConfirm(selected)
-        }
-        className="
-          mt-3
-          h-14
-          rounded-2xl
-          border
-          border-yellow-500/30
-          text-white
-        "
-      >
-        تأیید
-      </button>
-
       <p
         className="
           text-center
@@ -403,9 +392,7 @@ function LanguageModal({
           mt-6
         "
       >
-        You can change language later
-        <br />
-        from settings.
+        {t.changeLater}
       </p>
     </div>
   );
