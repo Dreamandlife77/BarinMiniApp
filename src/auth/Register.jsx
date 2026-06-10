@@ -16,7 +16,7 @@ export default function Register() {
           src={logo}
           alt=""
           className="
-            w-72
+            w-60
             object-contain
           "
         />
