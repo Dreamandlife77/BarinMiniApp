@@ -184,7 +184,7 @@ export default function Onboarding() {
         <div className="pb-10">
 
           <button
-            onClick={() => navigate("/home")}
+            onClick={() => navigate("/login")}
             className="
               w-full
               h-14
@@ -202,28 +202,6 @@ export default function Onboarding() {
           >
             {t.next}
           </button>
-
-          {/* <button
-            onClick={() => navigate("/home")}
-            className="
-              w-full
-              h-14
-              mt-3
-              rounded-2xl
-              border
-              border-yellow-500/40
-              bg-slate-900/60
-              backdrop-blur
-              text-white
-              text-lg
-              font-bold
-            "
-          >
-            بزن بریم
-          </button> */}
-
-        
-
         </div>
 
       </div>

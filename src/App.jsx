@@ -8,6 +8,8 @@ import Missions from "./pages/Missions";
 import Leaderboard from "./pages/Leaderboard";
 import MineralCollection from "./pages/MineralCollection";
 import Mining from "./pages/Mining";
+import Register from "./auth/Register";
+import Login from "./auth/Login";
 import EducationDetail from "./pages/EducationDetail";
 import Home from "./pages/Home.jsx"
 
@@ -25,7 +27,8 @@ function App() {
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/minerals" element={<MineralCollection />} />
         <Route path="/mining"  element={<Mining />} />
-        <Route path="/education/:id"  element={<EducationDetail />} />
+        <Route path="/register"  element={<Register />} />
+        <Route path="/login"  element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
